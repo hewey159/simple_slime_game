@@ -1,0 +1,99 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Character",
+"language": "GDScript",
+"path": "res://addons/textalog/resources/character_class/character_class.gd"
+}, {
+"base": "GraphNode",
+"class": "CommonNode",
+"language": "GDScript",
+"path": "res://addons/project_map/pm_common_node.gd"
+}, {
+"base": "DialogNode",
+"class": "DialogBubble",
+"language": "GDScript",
+"path": "res://addons/textalog/nodes/dialogue_bubble_node/dialog_bubble.gd"
+}, {
+"base": "Container",
+"class": "DialogManager",
+"language": "GDScript",
+"path": "res://addons/textalog/nodes/dialogue_base_node/dialog_node/dialog_node.gd"
+}, {
+"base": "Control",
+"class": "DialogNode",
+"language": "GDScript",
+"path": "res://addons/textalog/nodes/dialogue_base_node/dialogue_base_node.gd"
+}, {
+"base": "Container",
+"class": "OptionsManager",
+"language": "GDScript",
+"path": "res://addons/textalog/nodes/dialogue_base_node/options_node/options_node.gd"
+}, {
+"base": "Resource",
+"class": "Portrait",
+"language": "GDScript",
+"path": "res://addons/textalog/resources/portrait_class/portrait_class.gd"
+}, {
+"base": "Control",
+"class": "PortraitManager",
+"language": "GDScript",
+"path": "res://addons/textalog/nodes/dialogue_base_node/portraits_node/portraits_node.gd"
+} ]
+_global_script_class_icons={
+"Character": "res://addons/textalog/assets/icons/character_icon.png",
+"CommonNode": "",
+"DialogBubble": "",
+"DialogManager": "",
+"DialogNode": "",
+"OptionsManager": "",
+"Portrait": "res://addons/textalog/assets/icons/portrait_icon.png",
+"PortraitManager": ""
+}
+
+[application]
+
+config/name="speed game simple"
+run/main_scene="res://Levels/Level1.tscn"
+config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/branch/plugin.cfg" )
+
+[input]
+
+left={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+right={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Person"
+2d_physics/layer_2="Collectable"
+2d_physics/layer_3="Enemy"
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_environment="res://default_env.tres"
